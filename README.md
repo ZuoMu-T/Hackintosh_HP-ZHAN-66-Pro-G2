@@ -44,6 +44,11 @@
 ### 如发现问题请 QQ 1639791757 不一定有时间<br>
 <br>
 
+## 免责声明
+  使用本配置产生的任何意外，后果自负！！！
+<br>
+<br>
+
 # Credits
 * 特别感谢
   * @ [Dortania](https://github.com/dortania) 基于 Opencore 0.78 的 [OpenCore Install Guide](https://dortania.github.io/OpenCore-Install-Guide/)
