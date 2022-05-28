@@ -35,10 +35,9 @@
 
 </br>
 </br>
-</br>
 
 # Part2：关于部分SSDT的说明
-详见
+详见 [ACPI_Build](https://github.com/ZuoMu-T/Hackintosh_HP-ZHAN-66-Pro-G2/tree/master/ACPI_Build) 部分
 </br>
 </br>
 </br>
