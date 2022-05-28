@@ -1,11 +1,12 @@
 # Fixing Embedded Controller (SSDT-EC/USBX)
-### Ê²Ã´ÊÇ EC£¿
-ÔÚ¼ÆËã»úÆ½Ì¨ÉÏ£¬Embedded Controller ¾ÍÊÇÎÒÃÇ³£ËµµÄ EC£¬ËüÖ÷ÒªÊÇÓÉÒ»¿ÅÌØÊâµÄ MCU À´¹¹³É£¬Í¨³£Ìá¹© LPC µÄ½Ó¿Ú£¬¹ÒÔÚ LPC ×ÜÏßÖ®ÏÂ£¬ÓÉ MCU Ëù¼¯³ÉµÄÒ»Ð©ÍâÉèÀ´Îª PC Ìá¹©Ò»Ð© Power£¬thermal£¬ÒÔ¼°Ò»Ð©ÆäËûµÄ¿ØÖÆ
+### ä»€ä¹ˆæ˜¯ ECï¼Ÿ
+åœ¨è®¡ç®—æœºå¹³å°ä¸Šï¼ŒEmbedded Controller å°±æ˜¯æˆ‘ä»¬å¸¸è¯´çš„ ECï¼Œå®ƒä¸»è¦æ˜¯ç”±ä¸€é¢—ç‰¹æ®Šçš„ MCU æ¥æž„æˆï¼Œé€šå¸¸æä¾› LPC çš„æŽ¥å£ï¼ŒæŒ‚åœ¨ LPC æ€»çº¿ä¹‹ä¸‹ï¼Œç”± MCU æ‰€é›†æˆçš„ä¸€äº›å¤–è®¾æ¥ä¸º PC æä¾›ä¸€äº› Powerï¼Œthermalï¼Œä»¥åŠä¸€äº›å…¶ä»–çš„æŽ§åˆ¶ã€‚
 
 ### What is the SSDT-EC/USBX used for?
 > The purpose of SSDT-EC/USBX is a couple things:
-
-* On desktops, the EC(or better known as the embedded controller) isn't compatible with AppleACPIEC driver, to get around this we disable this device when running macOS
-* AppleBusPowerController will look for a device named EC, so we will want to create a fake device for this kext to load onto
-    * AppleBusPowerController also requires a USBX device to supply USB power properties for Skylake and newer, so we will bundle this device in with the EC fix
-* On laptops, the EC is used for hotkeys and battery so disabling this isn't all too ideal. Problem is our EC's name isn't compatible, so we will create a simple "fake" EC device that will satisfy Apple
+> 
+> * On desktops, the EC(or better known as the embedded controller) isn't compatible with AppleACPIEC driver, to get around this we disable this device 
+>   when running macOS
+> * AppleBusPowerController will look for a device named EC, so we will want to create a fake device for this kext to load onto
+>     * AppleBusPowerController also requires a USBX device to supply USB power properties for Skylake and newer, so we will bundle this device in with the >       EC fix
+> * On laptops, the EC is used for hotkeys and battery so disabling this isn't all too ideal. Problem is our EC's name isn't compatible, so we will create >   a simple "fake" EC device that will satisfy Apple
