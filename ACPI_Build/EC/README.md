@@ -41,7 +41,7 @@ Scope (_SB.PCI0.LPCB)
 <br>
 <br>
 
-### 以 SSDT-EC-USBX.dsl 为基础构建 SSDT-EC-USBX.aml <br>
+### 以 [SSDT-EC-USBX.dsl](https://github.com/ZuoMu-T/Hackintosh_HP-ZHAN-66-Pro-G2/blob/master/ACPI_Build/EC/SSDT-EC-USBX.dsl) 为基础构建 SSDT-EC-USBX.aml <br>
 ```
 External (_SB_.PC00.LPC0, DeviceObj)   <-  重命名此路径
 
