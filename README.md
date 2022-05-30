@@ -38,6 +38,36 @@
 
 # Part2：关于部分SSDT的构建说明
 详见 [ACPI_Build](https://github.com/ZuoMu-T/Hackintosh_HP-ZHAN-66-Pro-G2/tree/master/ACPI_Build) 部分
+
+### 00-ASL 语法基础
+* 我即忙又懒 :joy:，ASL 语法基础请移步[远景论坛](https://bbs.pcbeta.com)以下尊位，特此感谢作者 @suhetao
+
+  远景论坛 -> [suhetao：[原创内容] 自己动手写DSDT系列教程1-ASL（ACPI Source Language）基础篇](http://bbs.pcbeta.com/forum.php?mod=viewthread&tid=944566&archive=2&extra=page%3D1&page=1)
+
+
+
+### 01-EC
+* [关于台式机、笔记本修复 EC（Embedded Controller）的方法](https://github.com/ZuoMu-T/Hackintosh_HP-ZHAN-66-Pro-G2/blob/master/ACPI_Build/01-EC/README.md)
+
+
+### 02-Disabling dGPUs
+* [直接调用 .off 函数禁用独显的方法](https://github.com/ZuoMu-T/Hackintosh_HP-ZHAN-66-Pro-G2/blob/master/ACPI_Build/02-Disabling%20dGPUs/README.md)
+
+
+### 03-AWAC:RTC Fix
+* [由 AWAC/RTC 导致引导、启动问题的三个 Case](https://github.com/ZuoMu-T/Hackintosh_HP-ZHAN-66-Pro-G2/tree/master/ACPI_Build/03-AWAC:RTC%20Fix)
+  * Case 1. 系统启用了 AWAC 而禁用了 RTC <br>
+    
+  * Case 2. AWAC 没有 \_STA 参数控制，或主板没有 RTC 设备 <br>
+    
+  * Case 3. AWAC/RTC 在多数 X99 和 X299 主板上导致的 early boot failures 问题 <br>
+
+
+### 04-Fixing NVRAM
+* 待更新......
+
+
+
 </br>
 </br>
 </br>
@@ -54,8 +84,12 @@
   * @ [Dortania](https://github.com/dortania) 基于 Opencore 0.78 的 [OpenCore Install Guide](https://dortania.github.io/OpenCore-Install-Guide/)
   * @ [Dortania](https://github.com/dortania) 制作 [Getting-Started-With-ACPI](https://github.com/dortania/Getting-Started-With-ACPI)
   * @ [Acidanthera](https://github.com/acidanthera) maintaining [OpenCorePkg](https://github.com/acidanthera/OpenCorePkg)
+
+<br>
+
 * 感谢
   * @ [liaoyudong2](https://github.com/liaoyudong2)
   * @ 大头蔡Cass
+  * @ suhetao
   * @ 感谢我的朋友提供硬件 :rofl:
   * @ ......
