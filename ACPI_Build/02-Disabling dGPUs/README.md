@@ -1,4 +1,4 @@
-# Disabling laptop dGPUs (SSDT-dGPU-Off.aml)
+# Disabling laptop dGPUs (SSDT-dGPU-Off)
 除了部分旧模具的 NVIDIA 独显可以在 macOS 中驱动外，现在新模具的 NVIDIA 独显都无法驱动。但由于系统启动时所有硬件都会被初始化，以供系统加载时识别 I/O 总线，从主机总线适配器调度 opROM（option ROM）等操作，因此独显在未被禁用时仍然会有电能损耗。
 <br>
 ### 禁用独显的几种方法
@@ -33,7 +33,7 @@ NVIDIA GeForce MX250：
 ```
 
 
-接下来我们只需要更改 [SSDT-dGPU-Off.dsl](https://github.com/ZuoMu-T/Hackintosh_HP-ZHAN-66-Pro-G2/blob/master/ACPI_Build/02-Disabling%20dGPUs/SSDT-dGPU-Off.dsl) 中的 ACPI 路径：<br>
+接下来，只需要更改 [SSDT-dGPU-Off.dsl](https://github.com/ZuoMu-T/Hackintosh_HP-ZHAN-66-Pro-G2/blob/master/ACPI_Build/02-Disabling%20dGPUs/SSDT-dGPU-Off.dsl) 中的 ACPI 路径：<br>
 
 ```ASL
 External(_SB.PCI0.PEG0.PEGP._OFF, MethodObj)	<-- 修改此处
@@ -41,9 +41,8 @@ External(_SB.PCI0.PEG0.PEGP._OFF, MethodObj)	<-- 修改此处
 If (CondRefOf(\_SB.PCI0.PEG0.PEGP._OFF)) { \_SB.PCI0.PEG0.PEGP._OFF () }	<-- 修改此处
 ```
 
-<br>
 修改完成后得到的代码结构如下：<br>
-<br>
+
 
 ```ASL
 External(_SB.PCIO.RP05.PXSX._OFF, MethodObj)
@@ -51,8 +50,6 @@ External(_SB.PCIO.RP05.PXSX._OFF, MethodObj)
 If (CondRefOf(\_SB.PCIO.RP05.PXSX._OFF)) { \_SB.PCIO.RP05.PXSX._OFF () }
 ```
 
-<br>
-<br>
 
 #### 最后另存为 SSDT-dGPU-Off.aml 即可。
 
