@@ -1,4 +1,4 @@
-# Fixing Embedded Controller (SSDT-EC-USBX.aml)
+# Fixing Embedded Controller (SSDT-EC-USBX)
 ### 什么是 EC？
 在计算机平台上，Embedded Controller 就是我们常说的 EC，它主要是由一颗特殊的 MCU 来构成，通常提供 LPC 的接口，为笔记本电脑提供一些电源管理，如笔记本进入待机或关机模式，外部电源系统的电力调度，智能电池的电力检测，充放电任务，以及一些实用的快捷按纽等。EC是一个单独的简单处理器，在开机前和开机过程中对整个系统起着全局的管理，而 BIOS 是在等 EC 把内部的物理环境初始化后才开始运行的。
 
