@@ -28,13 +28,14 @@ Device Manager  --> Display Adapters  --> dGPU  --> Properties  --> Details  -->
 以我的机器为例：<br>
 
 ```
-NVIDIA GeForce MX250： _SB.PCIO.RP05.PXSX
+NVIDIA GeForce MX250： 
+                      _SB.PCIO.RP05.PXSX
 ```
 
 
 接下来我们只需要更改 [SSDT-dGPU-Off.dsl](https://github.com/ZuoMu-T/Hackintosh_HP-ZHAN-66-Pro-G2/blob/master/ACPI_Build/02-Disabling%20dGPUs/SSDT-dGPU-Off.dsl) 中的 ACPI 路径：<br>
 
-```
+```ASL
 External(_SB.PCI0.PEG0.PEGP._OFF, MethodObj)	<-- 修改此处
 
 If (CondRefOf(\_SB.PCI0.PEG0.PEGP._OFF)) { \_SB.PCI0.PEG0.PEGP._OFF () }	<-- 修改此处
@@ -44,7 +45,7 @@ If (CondRefOf(\_SB.PCI0.PEG0.PEGP._OFF)) { \_SB.PCI0.PEG0.PEGP._OFF () }	<-- 修
 修改完成后得到的代码结构如下：<br>
 <br>
 
-```
+```ASL
 External(_SB.PCIO.RP05.PXSX._OFF, MethodObj)
 
 If (CondRefOf(\_SB.PCIO.RP05.PXSX._OFF)) { \_SB.PCIO.RP05.PXSX._OFF () }
