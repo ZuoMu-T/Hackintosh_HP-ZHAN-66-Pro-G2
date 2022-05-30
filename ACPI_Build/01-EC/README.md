@@ -16,7 +16,7 @@
 ### 查找 ACPI 的路径
 在 Windows 下使用 [SSDTTime](https://github.com/corpnewt/SSDTTime) 提取 DSDT.aml，使用 [MaciASL](https://github.com/acidanthera/MaciASL) 打开，搜索 `PNP0C09`，应该可以得到以下信息（以我的 DSDT 为例）：
 
-```
+```ASL
 Scope (_SB.PCI0.LPCB)
 {
 	Device (EC0)
@@ -44,7 +44,7 @@ Scope (_SB.PCI0.LPCB)
 
 ### 以 [SSDT-EC-USBX.dsl](https://github.com/ZuoMu-T/Hackintosh_HP-ZHAN-66-Pro-G2/blob/master/ACPI_Build/EC/SSDT-EC-USBX.dsl) 为基础构建 SSDT-EC-USBX.aml <br>
 
-```
+```ASL
 External (_SB_.PC00.LPC0, DeviceObj)   <-  修改此路径
 
 Scope (_SB.PC00.LPC0)   <- 修改此路径
@@ -55,7 +55,7 @@ Scope (_SB.PC00.LPC0)   <- 修改此路径
 
 完成后得到的代码结构如下：<br>
 
-```
+```ASL
 External (_SB_.PCI0.LPCB, DeviceObj) 
 
 Scope (_SB.PCI0.LPCB) 
