@@ -1,0 +1,49 @@
+1。安装任何来源的文件
+在终端输入以下命令:
+ 
+sudo spctl --master-disable
+
+
+2。隐藏“任何来源”选项命令:
+ 
+sudo spctl --master-enable
+
+
+3。开启一位数密码：
+pwpolicy -clearaccountpolicies
+
+
+4。显示/隐藏文件
+Command + Shift + .
+
+
+5。命令挂载磁盘
+   ① 不报错
+      diskutil list
+      diskutil mount disk1s2
+      open 
+
+   ② 报错
+      diskutil list
+      sudo diskutil mount /dev/disk2s1
+      open 
+
+
+6。文件安全：（Mac支持拖拽）
+验证SHA-256
+openssl dgst -sha256 文件路径
+
+验证SHA-1
+openssl sha1 文件路径
+
+验证 MD5
+openssl md5 文件路径
+
+
+7。查看开机 trim 所用时间：
+log show --last boot | grep "trims took"
+
+
+
+
+
