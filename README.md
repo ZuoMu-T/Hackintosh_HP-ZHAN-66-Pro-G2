@@ -1,4 +1,4 @@
-# Part1：关于Hackintosh / HP ZHAN 66 Pro G2(15.6)
+# Part1：关于 Hackintosh / HP ZHAN 66 Pro G2(15.6)
 淘汰下来的机子装个黑苹果，仅供参考。`如发生意外，后果自负！！！`
 ### 机器配置及相关说明
 ###### 虽然是淘汰下来的，但是从朋友那拿了内存和硬盘——全升级了 :sunglasses:
@@ -6,15 +6,15 @@
 | :-: | :-: | :- |
 | CPU | Intelᴿ Coreᵀᴹ i5-8265U 四核 @1.60GHz |
 |  dGPU | Nvidia GeForce MX250 | 无法驱动 |
-| IGPU | UHD Graphics 620 | 在Monterey下掉帧严重 |
-| Memory | Kingston 2666MHz 8Gx2 | i5-8265U最高仅支持 2400 MHz |
-|  WiFi | BCM94360CD2 with Bluetooth 4.0 | 拆机卡需配合反向转接卡使用 |
-| Ethernet | Realtek RTL8168H/8111H | 支持ASPM-L1低功耗待机模式 |
+| IGPU | UHD Graphics 620 | 在 Monterey 下掉帧严重 |
+| Memory | Kingston 2666MHz 8Gx2 | i5-8265U 最高仅支持 2400 MHz |
+|  WiFi | BCM94360CS2 with Bluetooth 4.0 | 拆机卡，AirDrop 等正常，需配合反向转接卡使用 |
+| Ethernet | Realtek RTL8168H/8111H | 支持 ASPM-L1 低功耗待机模式 |
 | 声卡 |  ALC236 | 扬声器及麦克风正常，无杂音 |
-| SSD | WD Blue SN550 NVMe 1T(PCIe 3.0) | 支持ASPM-L1低功耗待机模式 |
+| SSD | WD Blue SN550 NVMe 1T(PCIe 3.0) | 支持 ASPM-L1 低功耗待机模式 |
 | SATA | Samsung 870 EVO 500GB | 可用来装 Windows |
 | USB | Intel(R) USB 3.1 可扩展主机控制器 | 已定制 USB，type-c 速率正常 |
-| SDCard | Intel SD控制器 | 生产厂家BayHubTech，无法驱动 |
+| SDCard | Intel SD控制器 | 生产厂家 BayHubTech，无法驱动 |
 
 ##### 其他说明：</br>
 * 此为双硬盘双系统配置，单硬盘双系统请另觅他法
@@ -36,7 +36,7 @@
 </br>
 </br>
 
-# Part2：关于部分SSDT的构建说明
+# Part2：关于部分 SSDT 的构建说明
 详见 [ACPI_Build](https://github.com/ZuoMu-T/Hackintosh_HP-ZHAN-66-Pro-G2/tree/master/ACPI_Build) 部分
 
 ### 00-ASL 语法基础
@@ -51,7 +51,7 @@
 
 
 ### 02-Disabling dGPUs
-* [直接调用 .off 函数禁用独显的方法](https://github.com/ZuoMu-T/Hackintosh_HP-ZHAN-66-Pro-G2/blob/master/ACPI_Build/02-Disabling%20dGPUs/README.md)
+* [直接调用 `.off` 函数禁用独显的方法](https://github.com/ZuoMu-T/Hackintosh_HP-ZHAN-66-Pro-G2/blob/master/ACPI_Build/02-Disabling%20dGPUs/README.md)
 
 
 ### 03-AWAC:RTC Fix
@@ -79,6 +79,7 @@
 
 ## 免责声明
   使用本配置产生的任何意外，后果自负！！！
+
 <br>
 <br>
 
