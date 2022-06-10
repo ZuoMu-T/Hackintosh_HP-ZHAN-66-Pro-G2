@@ -1,48 +1,57 @@
-1。安装任何来源的文件
-在终端输入以下命令:
- 
-sudo spctl --master-disable
+1。开启安装“任何来源”App 选项命令(在终端输入以下命令):
+   sudo spctl --master-disable
+
+   隐藏安装“任何来源”App 选项命令:
+   sudo spctl --master-enable
+
+------------------------------------------------------------------------------------
+2。开启一位数密码：
+   pwpolicy -clearaccountpolicies
+   (然后在设置中更改)
+
+------------------------------------------------------------------------------------
+3。① Mac显示“隐藏文件”命令：
+     defaults write com.apple.finder AppleShowAllFiles -bool true
+
+     Mac隐藏“隐藏文件”命令：
+     defaults write com.apple.finder AppleShowAllFiles -bool false
 
 
-2。隐藏“任何来源”选项命令:
- 
-sudo spctl --master-enable
+  ② 快捷键显示”隐藏文件”(注意:此方法适用于macOS Sierra或以上的系统)
+     Command + Shift + .
 
 
-3。开启一位数密码：
-pwpolicy -clearaccountpolicies
+  ③ 用第三方应用程序 Funter 显示“隐藏文件”
+     Funter 是 Mac 上的一款高级文件隐藏工具，支持在 Finder 中切换“隐藏文件”的可见性
 
-
-4。显示/隐藏文件
-Command + Shift + .
-
-
-5。命令挂载磁盘
+------------------------------------------------------------------------------------
+4。命令挂载磁盘
    ① 不报错
       diskutil list
-      diskutil mount disk1s2
+      diskutil mount disk1s2(磁盘标识符)
       open 
 
    ② 报错
       diskutil list
-      sudo diskutil mount /dev/disk2s1
+      sudo diskutil mount /dev/disk2s1(磁盘标识符)
       open 
 
+------------------------------------------------------------------------------------
+5。文件安全：(Mac支持拖拽)
+   验证SHA-256
+   openssl dgst -sha256 文件路径
 
-6。文件安全：（Mac支持拖拽）
-验证SHA-256
-openssl dgst -sha256 文件路径
+   验证SHA-1
+   openssl sha1 文件路径
 
-验证SHA-1
-openssl sha1 文件路径
+   验证 MD5
+   openssl md5 文件路径
 
-验证 MD5
-openssl md5 文件路径
+------------------------------------------------------------------------------------
+6。查看开机 trim 所用时间：
+   log show --last boot | grep "trims took"
 
-
-7。查看开机 trim 所用时间：
-log show --last boot | grep "trims took"
-
+------------------------------------------------------------------------------------
 
 
 
