@@ -33,6 +33,9 @@
   | Realtek | [ALC236](https://github.com/acidanthera/AppleALC/tree/master/Resources/ALC236) | 0x100001, 0x100002</br>layout 3?,11,12,13,14,15,16,17,18,23,36,54,99 | 13 (10.9) | - |
   * 3，11，12 未测试
 
+* HP ZHAN 66 Pro G2(15.6) 不支持 CFG LOCK 解锁 ( BIOS 压根就没有对应的 value，别折腾了:man_shrugging: )
+
+
 </br>
 </br>
 
