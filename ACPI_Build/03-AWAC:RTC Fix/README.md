@@ -294,7 +294,7 @@ RTC，实时时钟，即 Real-time clock，是一个独立的 BCD 定时器/计�
 <br>
 <br>
 
-## Thanks To
+## Thanks
 * [dortania：Getting Started With ACPI](https://dortania.github.io/Getting-Started-With-ACPI/Universal/awac.html)
 
 
