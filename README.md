@@ -57,11 +57,11 @@
 * [直接调用 `.off` 函数禁用独显的方法](https://github.com/ZuoMu-T/Hackintosh_HP-ZHAN-66-Pro-G2/blob/master/ACPI_Build/02-Disabling%20dGPUs/README.md)
 
 
-### 03-AWAC:RTC Fix
+### 03-AWAC/RTC Fix
 * [由 AWAC/RTC 导致引导、启动问题的三个 Case](https://github.com/ZuoMu-T/Hackintosh_HP-ZHAN-66-Pro-G2/tree/master/ACPI_Build/03-AWAC:RTC%20Fix)
   * Case 1. 系统启用了 AWAC 而禁用了 RTC <br>
     
-  * Case 2. AWAC 没有 \_STA 参数控制，或主板没有 RTC 设备 <br>
+  * Case 2. 系统启用了 AWAC 但是 AWAC 没有 \_STA 参数控制，或主板没有 RTC 设备 <br>
     
   * Case 3. AWAC/RTC 在多数 X99 和 X299 主板上导致的 early boot failures 问题 <br>
 
