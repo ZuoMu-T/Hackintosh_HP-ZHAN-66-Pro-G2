@@ -1,6 +1,6 @@
 # RTC Fix (SSDT-AWAC/RTC0)
 ## 什么是 RTC?
-RTC，实时时钟，即Real-time clock，是一个独立的 BCD 定时器/计数器，因此也称为时钟芯片。它为人们提供精确的实时时间，或者为电子系统提供精确的时间基准，目前实时时钟芯片大多采用精度较高的晶体振荡器作为时钟源。<br>
+RTC，实时时钟，即 Real-time clock，是一个独立的 BCD 定时器/计数器，因此也称为时钟芯片。它为人们提供精确的实时时间，或者为电子系统提供精确的时间基准，目前实时时钟芯片大多采用精度较高的晶体振荡器作为时钟源。<br>
 * RTC 提供一个日历时钟、两个可编程闹钟中断，以及一个具有中断功能的周期性可编程唤醒标志；<br>
 * RTC 还包含用于管理低功耗模式的自动唤醒单元。<br>
 
@@ -86,7 +86,7 @@ RTC，实时时钟，即Real-time clock，是一个独立的 BCD 定时器/计�
 
 从以上代码可以看出：主板 BIOS 禁用了 RTC，并且是通过 \_STA 函数控制，**函数返回参数 STAS = 1 时，禁用 RTC <sup id="a1">[[2]](#f1)</sup>** 。<br>
 
-**通过 <sup id="a1">[[1]](#f1)</sup>、<sup id="a1">[[2]](#f1)</sup> 不难分析出：只需令返回参数 STAS = 0，既可禁用 AWAC，又可启用 RTC。** 因此我们可以直接将 [SSDT-AWAC-No-RTC-Yes-对应 Case 1.dsl](https://github.com/ZuoMu-T/Hackintosh_HP-ZHAN-66-Pro-G2/blob/master/ACPI_Build/03-AWAC:RTC%20Fix/SSDT-AWAC-No-RTC-Yes-%E5%AF%B9%E5%BA%94%20Case%201.dsl) 另存为 SSDT-AWAC-No-RTC-Yes.aml 即可解决此问题。<br>
+**通过 <sup id="a1">[[1]](#f1)</sup>、<sup id="a1">[[2]](#f1)</sup> 不难分析出：只需令返回参数 STAS = 1，既可禁用 AWAC，又可启用 RTC。** 因此我们可以直接将 [SSDT-AWAC-No-RTC-Yes-对应 Case 1.dsl](https://github.com/ZuoMu-T/Hackintosh_HP-ZHAN-66-Pro-G2/blob/master/ACPI_Build/03-AWAC:RTC%20Fix/SSDT-AWAC-No-RTC-Yes-%E5%AF%B9%E5%BA%94%20Case%201.dsl) 另存为 SSDT-AWAC-No-RTC-Yes.aml 即可解决此问题。<br>
 <br>
 
 ### Case 2
@@ -114,7 +114,7 @@ RTC，实时时钟，即Real-time clock，是一个独立的 BCD 定时器/计�
 ```
 
 
-第二步，先搜索 `PNP0A08` 以确定 PCI 的路径（搜索到以下代码后记录其路径。如果出现多个，请使用第一个`PNP0A08` 对应的 PCI 路径）：
+第二步，再搜索 `PNP0A08` 以确定 PCI 的路径（搜索到以下代码后记录其路径。如果出现多个，请使用第一个`PNP0A08` 对应的 PCI 路径）：
 
 ```ASL
       Device (PCI)
