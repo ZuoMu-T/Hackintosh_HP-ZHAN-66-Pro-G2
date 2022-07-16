@@ -20,7 +20,7 @@
 				<key>Enabled</key>
 				<true/>
 				<key>Path</key>
-				<string>SSDT-BATT.aml</string>
+				<string>SSDT-0D6D-HP.aml</string>
 			</dict>
 			<dict>
 				<key>Comment</key>
@@ -28,7 +28,7 @@
 				<key>Enabled</key>
 				<true/>
 				<key>Path</key>
-				<string>SSDT-0D6D-HP.aml</string>
+				<string>SSDT-BATT.aml</string>
 			</dict>
 			<dict>
 				<key>Comment</key>
@@ -53,6 +53,14 @@
 				<true/>
 				<key>Path</key>
 				<string>SSDT-GPRW.aml</string>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string></string>
+				<key>Enabled</key>
+				<true/>
+				<key>Path</key>
+				<string>SSDT-HPET.aml</string>
 			</dict>
 			<dict>
 				<key>Comment</key>
@@ -125,38 +133,6 @@
 				<true/>
 				<key>Path</key>
 				<string>SSDT-TPXX.aml</string>
-			</dict>
-			<dict>
-				<key>Comment</key>
-				<string></string>
-				<key>Enabled</key>
-				<true/>
-				<key>Path</key>
-				<string>SSDT-HPET.aml</string>
-			</dict>
-			<dict>
-				<key>Comment</key>
-				<string></string>
-				<key>Enabled</key>
-				<false/>
-				<key>Path</key>
-				<string>SSDT-PPMC.aml</string>
-			</dict>
-			<dict>
-				<key>Comment</key>
-				<string></string>
-				<key>Enabled</key>
-				<false/>
-				<key>Path</key>
-				<string>SSDT-PWRB.aml</string>
-			</dict>
-			<dict>
-				<key>Comment</key>
-				<string></string>
-				<key>Enabled</key>
-				<false/>
-				<key>Path</key>
-				<string>SSDT-DGPU-SDCard-OFF.aml</string>
 			</dict>
 		</array>
 		<key>Delete</key>
@@ -640,7 +616,7 @@
 				<key>TableLength</key>
 				<integer>0</integer>
 				<key>TableSignature</key>
-				<data></data>
+				<data>SFBFVA==</data>
 			</dict>
 			<dict>
 				<key>Base</key>
@@ -820,11 +796,11 @@
 			<key>ForceExitBootServices</key>
 			<false/>
 			<key>ProtectMemoryRegions</key>
-			<true/>
+			<false/>
 			<key>ProtectSecureBoot</key>
 			<false/>
 			<key>ProtectUefiServices</key>
-			<false/>
+			<true/>
 			<key>ProvideCustomSlide</key>
 			<true/>
 			<key>ProvideMaxSlide</key>
@@ -845,7 +821,53 @@
 	<dict>
 		<key>Add</key>
 		<dict>
-			<key>PciRoot(0x0)/Pci(0x2,0x0)</key>
+			<key>##PciRoot(0x0)/Pci(0x2,0x0)</key>
+			<dict>
+				<key>AAPL,ig-platform-id</key>
+				<data>AACbPg==</data>
+				<key>device-id</key>
+				<data>mz4AAA==</data>
+				<key>enable-hdmi20</key>
+				<data>AQAAAA==</data>
+				<key>framebuffer-con0-enable</key>
+				<data>AQAAAA==</data>
+				<key>framebuffer-con0-pipe</key>
+				<data>EgAAAA==</data>
+				<key>framebuffer-con1-busid</key>
+				<data>AQAAAA==</data>
+				<key>framebuffer-con1-enable</key>
+				<data>AQAAAA==</data>
+				<key>framebuffer-con1-pipe</key>
+				<data>EgAAAA==</data>
+				<key>framebuffer-con1-type</key>
+				<data>AAgAAA==</data>
+				<key>framebuffer-con2-enable</key>
+				<data>AQAAAA==</data>
+				<key>framebuffer-con2-pipe</key>
+				<data>EgAAAA==</data>
+				<key>framebuffer-patch-enable</key>
+				<data>AQAAAA==</data>
+				<key>framebuffer-unifiedmem</key>
+				<data>AAAAgA==</data>
+				<key>hda-gfx</key>
+				<string>onboard-1</string>
+			</dict>
+			<key>#PciRoot(0x0)/Pci(0x1D,0x1)/Pci(0x0,0x0)</key>
+			<dict>
+				<key>AAPL,slot-name</key>
+				<string>WLAN</string>
+				<key>compatible</key>
+				<string>pci14e4,43a3</string>
+				<key>device_type</key>
+				<string>Airport Extreme</string>
+				<key>model</key>
+				<string>DW1820A (BCM4350) 802.11ac Wireless Network Adapter</string>
+				<key>name</key>
+				<string>Airport</string>
+				<key>pci-aspm-default</key>
+				<integer>0</integer>
+			</dict>
+			<key>#PciRoot(0x0)/Pci(0x2,0x0)</key>
 			<dict>
 				<key>AAPL,ig-platform-id</key>
 				<data>AAClPg==</data>
@@ -882,68 +904,52 @@
 				<key>model</key>
 				<string>UHD Graphics 620</string>
 			</dict>
-			<key>PciRoot(0x0)/Pci(0x1f,0x3)</key>
-			<dict>
-				<key>layout-id</key>
-				<data>CwAAAA==</data>
-				<key>pci-aspm-default</key>
-				<data>AgAAAA==</data>
-			</dict>
 			<key>PciRoot(0x0)/Pci(0x17,0x0)</key>
 			<dict>
 				<key>pci-aspm-default</key>
 				<data>AgAAAA==</data>
 			</dict>
-			<key>#PciRoot(0x0)/Pci(0x1D,0x1)/Pci(0x0,0x0)</key>
+			<key>PciRoot(0x0)/Pci(0x1f,0x3)</key>
 			<dict>
-				<key>AAPL,slot-name</key>
-				<string>WLAN</string>
-				<key>compatible</key>
-				<string>pci14e4,43a3</string>
-				<key>device_type</key>
-				<string>Airport Extreme</string>
-				<key>model</key>
-				<string>DW1820A (BCM4350) 802.11ac Wireless Network Adapter</string>
-				<key>name</key>
-				<string>Airport</string>
+				<key>layout-id</key>
+				<data>NgAAAA==</data>
 				<key>pci-aspm-default</key>
-				<integer>0</integer>
+				<data>AgAAAA==</data>
 			</dict>
-			<key>#PciRoot(0x0)/Pci(0x1D,0x4)/Pci(0x0,0x0)</key>
-			<dict>
-				<key>compatible</key>
-				<string>pci15b7,5009</string>
-			</dict>
-			<key>#PciRoot(0x0)/Pci(0x2,0x0)</key>
+			<key>PciRoot(0x0)/Pci(0x2,0x0)</key>
 			<dict>
 				<key>AAPL,ig-platform-id</key>
-				<data>AACbPg==</data>
+				<data>AAClPg==</data>
+				<key>AAPL,slot-name</key>
+				<string>Internal@0,2,0</string>
+				<key>AAPL00,override-no-connect</key>
+				<data>AP///////wAJ5XycAAAAAAEdAQSlIhNgA2+xp1VMniUMUFQAAAABAQEBAQEBAQEBAQEBAQEBnDaAoHA4KEAwIDUAWMIQAAAaaCSAoHA4KEAwIDUAWMIQAAAaAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAHKP8KPMgJCR3IAAAAADA=</data>
 				<key>device-id</key>
-				<data>mz4AAA==</data>
+				<data>pT4AAA==</data>
+				<key>device_type</key>
+				<string>VGA compatible controller</string>
+				<key>disable-external-gpu</key>
+				<data>AQAAAA==</data>
 				<key>enable-hdmi20</key>
-				<data>AQAAAA==</data>
-				<key>framebuffer-con0-enable</key>
-				<data>AQAAAA==</data>
-				<key>framebuffer-con0-pipe</key>
-				<data>EgAAAA==</data>
-				<key>framebuffer-con1-busid</key>
 				<data>AQAAAA==</data>
 				<key>framebuffer-con1-enable</key>
 				<data>AQAAAA==</data>
-				<key>framebuffer-con1-pipe</key>
-				<data>EgAAAA==</data>
 				<key>framebuffer-con1-type</key>
 				<data>AAgAAA==</data>
 				<key>framebuffer-con2-enable</key>
 				<data>AQAAAA==</data>
-				<key>framebuffer-con2-pipe</key>
-				<data>EgAAAA==</data>
+				<key>framebuffer-con2-index</key>
+				<data>/////w==</data>
+				<key>framebuffer-fbmem</key>
+				<data>AACQAA==</data>
 				<key>framebuffer-patch-enable</key>
 				<data>AQAAAA==</data>
+				<key>framebuffer-portcount</key>
+				<data>AgAAAA==</data>
+				<key>framebuffer-stolenmem</key>
+				<data>AAAwAQ==</data>
 				<key>framebuffer-unifiedmem</key>
 				<data>AAAAgA==</data>
-				<key>hda-gfx</key>
-				<string>onboard-1</string>
 			</dict>
 		</dict>
 		<key>Delete</key>
@@ -955,11 +961,11 @@
 		<array>
 			<dict>
 				<key>Arch</key>
-				<string>x86_64</string>
+				<string>Any</string>
 				<key>BundlePath</key>
 				<string>Lilu.kext</string>
 				<key>Comment</key>
-				<string>V1.6.0 | Patch engine</string>
+				<string>Patch engine</string>
 				<key>Enabled</key>
 				<true/>
 				<key>ExecutablePath</key>
@@ -973,11 +979,11 @@
 			</dict>
 			<dict>
 				<key>Arch</key>
-				<string>x86_64</string>
+				<string>Any</string>
 				<key>BundlePath</key>
 				<string>VirtualSMC.kext</string>
 				<key>Comment</key>
-				<string>V1.2.9 | SMC emulator</string>
+				<string>SMC emulator</string>
 				<key>Enabled</key>
 				<true/>
 				<key>ExecutablePath</key>
@@ -995,7 +1001,7 @@
 				<key>BundlePath</key>
 				<string>WhateverGreen.kext</string>
 				<key>Comment</key>
-				<string>V1.5.8</string>
+				<string>Video patches</string>
 				<key>Enabled</key>
 				<true/>
 				<key>ExecutablePath</key>
@@ -1009,11 +1015,11 @@
 			</dict>
 			<dict>
 				<key>Arch</key>
-				<string>x86_64</string>
+				<string>Any</string>
 				<key>BundlePath</key>
 				<string>AppleALC.kext</string>
 				<key>Comment</key>
-				<string>V1.7.1 | Audio patches</string>
+				<string>Audio patches</string>
 				<key>Enabled</key>
 				<true/>
 				<key>ExecutablePath</key>
@@ -1027,11 +1033,11 @@
 			</dict>
 			<dict>
 				<key>Arch</key>
-				<string>x86_64</string>
+				<string>Any</string>
 				<key>BundlePath</key>
 				<string>SMCProcessor.kext</string>
 				<key>Comment</key>
-				<string>V1.2.9</string>
+				<string></string>
 				<key>Enabled</key>
 				<true/>
 				<key>ExecutablePath</key>
@@ -1045,11 +1051,11 @@
 			</dict>
 			<dict>
 				<key>Arch</key>
-				<string>x86_64</string>
+				<string>Any</string>
 				<key>BundlePath</key>
 				<string>SMCSuperIO.kext</string>
 				<key>Comment</key>
-				<string>V1.2.9</string>
+				<string></string>
 				<key>Enabled</key>
 				<true/>
 				<key>ExecutablePath</key>
@@ -1063,11 +1069,11 @@
 			</dict>
 			<dict>
 				<key>Arch</key>
-				<string>x86_64</string>
+				<string>Any</string>
 				<key>BundlePath</key>
 				<string>SMCBatteryManager.kext</string>
 				<key>Comment</key>
-				<string>V1.2.9</string>
+				<string></string>
 				<key>Enabled</key>
 				<true/>
 				<key>ExecutablePath</key>
@@ -1085,15 +1091,15 @@
 				<key>BundlePath</key>
 				<string>AirportBrcmFixup.kext</string>
 				<key>Comment</key>
-				<string>V2.1.4</string>
+				<string></string>
 				<key>Enabled</key>
-				<true/>
+				<false/>
 				<key>ExecutablePath</key>
 				<string>Contents/MacOS/AirportBrcmFixup</string>
 				<key>MaxKernel</key>
 				<string></string>
 				<key>MinKernel</key>
-				<string></string>
+				<string>12.0.0</string>
 				<key>PlistPath</key>
 				<string>Contents/Info.plist</string>
 			</dict>
@@ -1103,25 +1109,25 @@
 				<key>BundlePath</key>
 				<string>AirportBrcmFixup.kext/Contents/PlugIns/AirPortBrcmNIC_Injector.kext</string>
 				<key>Comment</key>
-				<string>V1.0</string>
+				<string></string>
 				<key>Enabled</key>
-				<true/>
+				<false/>
 				<key>ExecutablePath</key>
 				<string></string>
 				<key>MaxKernel</key>
 				<string></string>
 				<key>MinKernel</key>
-				<string></string>
+				<string>17.0.0</string>
 				<key>PlistPath</key>
 				<string>Contents/Info.plist</string>
 			</dict>
 			<dict>
 				<key>Arch</key>
-				<string>x86_64</string>
+				<string>Any</string>
 				<key>BundlePath</key>
 				<string>CPUFriend.kext</string>
 				<key>Comment</key>
-				<string>V1.2.5</string>
+				<string></string>
 				<key>Enabled</key>
 				<true/>
 				<key>ExecutablePath</key>
@@ -1135,11 +1141,11 @@
 			</dict>
 			<dict>
 				<key>Arch</key>
-				<string>x86_64</string>
+				<string>Any</string>
 				<key>BundlePath</key>
 				<string>CPUFriendDataProvider.kext</string>
 				<key>Comment</key>
-				<string>V1.0.1</string>
+				<string></string>
 				<key>Enabled</key>
 				<true/>
 				<key>ExecutablePath</key>
@@ -1153,11 +1159,11 @@
 			</dict>
 			<dict>
 				<key>Arch</key>
-				<string>x86_64</string>
+				<string>Any</string>
 				<key>BundlePath</key>
 				<string>USBPorts.kext</string>
 				<key>Comment</key>
-				<string>V1.0</string>
+				<string></string>
 				<key>Enabled</key>
 				<true/>
 				<key>ExecutablePath</key>
@@ -1171,11 +1177,11 @@
 			</dict>
 			<dict>
 				<key>Arch</key>
-				<string>x86_64</string>
+				<string>Any</string>
 				<key>BundlePath</key>
 				<string>VoodooI2C.kext/Contents/PlugIns/VoodooI2CServices.kext</string>
 				<key>Comment</key>
-				<string>V1</string>
+				<string></string>
 				<key>Enabled</key>
 				<true/>
 				<key>ExecutablePath</key>
@@ -1189,11 +1195,11 @@
 			</dict>
 			<dict>
 				<key>Arch</key>
-				<string>x86_64</string>
+				<string>Any</string>
 				<key>BundlePath</key>
 				<string>VoodooI2C.kext/Contents/PlugIns/VoodooGPIO.kext</string>
 				<key>Comment</key>
-				<string>V1.1</string>
+				<string></string>
 				<key>Enabled</key>
 				<true/>
 				<key>ExecutablePath</key>
@@ -1207,11 +1213,11 @@
 			</dict>
 			<dict>
 				<key>Arch</key>
-				<string>x86_64</string>
+				<string>Any</string>
 				<key>BundlePath</key>
 				<string>VoodooI2C.kext/Contents/PlugIns/VoodooInput.kext</string>
 				<key>Comment</key>
-				<string>V1.1.3</string>
+				<string></string>
 				<key>Enabled</key>
 				<true/>
 				<key>ExecutablePath</key>
@@ -1225,11 +1231,11 @@
 			</dict>
 			<dict>
 				<key>Arch</key>
-				<string>x86_64</string>
+				<string>Any</string>
 				<key>BundlePath</key>
 				<string>VoodooI2C.kext</string>
 				<key>Comment</key>
-				<string>V2.7</string>
+				<string></string>
 				<key>Enabled</key>
 				<true/>
 				<key>ExecutablePath</key>
@@ -1243,11 +1249,11 @@
 			</dict>
 			<dict>
 				<key>Arch</key>
-				<string>x86_64</string>
+				<string>Any</string>
 				<key>BundlePath</key>
 				<string>VoodooI2CHID.kext</string>
 				<key>Comment</key>
-				<string>V1</string>
+				<string></string>
 				<key>Enabled</key>
 				<true/>
 				<key>ExecutablePath</key>
@@ -1265,7 +1271,7 @@
 				<key>BundlePath</key>
 				<string>VoodooPS2Controller.kext</string>
 				<key>Comment</key>
-				<string>V2.2.8</string>
+				<string></string>
 				<key>Enabled</key>
 				<true/>
 				<key>ExecutablePath</key>
@@ -1283,7 +1289,7 @@
 				<key>BundlePath</key>
 				<string>VoodooPS2Controller.kext/Contents/PlugIns/VoodooPS2Keyboard.kext</string>
 				<key>Comment</key>
-				<string>V2.2.8</string>
+				<string></string>
 				<key>Enabled</key>
 				<true/>
 				<key>ExecutablePath</key>
@@ -1297,11 +1303,11 @@
 			</dict>
 			<dict>
 				<key>Arch</key>
-				<string>x86_64</string>
+				<string>Any</string>
 				<key>BundlePath</key>
 				<string>NVMeFix.kext</string>
 				<key>Comment</key>
-				<string>V1.0.9</string>
+				<string></string>
 				<key>Enabled</key>
 				<true/>
 				<key>ExecutablePath</key>
@@ -1315,11 +1321,11 @@
 			</dict>
 			<dict>
 				<key>Arch</key>
-				<string>x86_64</string>
+				<string>Any</string>
 				<key>BundlePath</key>
 				<string>RealtekRTL8111.kext</string>
 				<key>Comment</key>
-				<string>V2.4.2</string>
+				<string></string>
 				<key>Enabled</key>
 				<true/>
 				<key>ExecutablePath</key>
@@ -1333,11 +1339,11 @@
 			</dict>
 			<dict>
 				<key>Arch</key>
-				<string>x86_64</string>
+				<string>Any</string>
 				<key>BundlePath</key>
 				<string>NoTouchID.kext</string>
 				<key>Comment</key>
-				<string>V1.0.4</string>
+				<string></string>
 				<key>Enabled</key>
 				<true/>
 				<key>ExecutablePath</key>
@@ -1351,33 +1357,15 @@
 			</dict>
 			<dict>
 				<key>Arch</key>
-				<string>x86_64</string>
+				<string>Any</string>
 				<key>BundlePath</key>
 				<string>USBInjectAll.kext</string>
 				<key>Comment</key>
-				<string>V0.7.5</string>
+				<string></string>
 				<key>Enabled</key>
 				<false/>
 				<key>ExecutablePath</key>
 				<string>Contents/MacOS/USBInjectAll</string>
-				<key>MaxKernel</key>
-				<string></string>
-				<key>MinKernel</key>
-				<string></string>
-				<key>PlistPath</key>
-				<string>Contents/Info.plist</string>
-			</dict>
-			<dict>
-				<key>Arch</key>
-				<string>Any</string>
-				<key>BundlePath</key>
-				<string>GenericCardReaderFriend.kext</string>
-				<key>Comment</key>
-				<string></string>
-				<key>Enabled</key>
-				<false/>
-				<key>ExecutablePath</key>
-				<string>Contents/MacOS/GenericCardReaderFriend</string>
 				<key>MaxKernel</key>
 				<string></string>
 				<key>MinKernel</key>
@@ -1901,7 +1889,7 @@
 			<key>ScanPolicy</key>
 			<integer>0</integer>
 			<key>SecureBootModel</key>
-			<string>Default</string>
+			<string>j213</string>
 			<key>Vault</key>
 			<string>Optional</string>
 		</dict>
@@ -1996,8 +1984,6 @@
 			</dict>
 			<key>7C436110-AB2A-4BBB-A880-FE41995C9F82</key>
 			<dict>
-				<key>#BY:prev-lang:kbd</key>
-				<data>AKaC1IYW5zOjI1M=</data>
 				<key>#INFO (prev-lang:kbd)</key>
 				<string>en:252 (ABC), set 656e3a323532</string>
 				<key>ForceDisplayRotationInEFI</key>
@@ -2005,7 +1991,7 @@
 				<key>SystemAudioVolume</key>
 				<data>Rg==</data>
 				<key>boot-args</key>
-				<string>-v keepsyms=1 debug=0x100 -igfxblr brcmfx-country=#a</string>
+				<string>-v -igfxblr brcmfx-country=#a debug=0x100</string>
 				<key>csr-active-config</key>
 				<data>5wMAAA==</data>
 				<key>prev-lang:kbd</key>
@@ -2075,14 +2061,14 @@
 		<dict>
 			<key>AdviseFeatures</key>
 			<false/>
+			<key>MLB</key>
+			<string>FVF9093004N0000JA</string>
 			<key>MaxBIOSVersion</key>
 			<false/>
-			<key>MLB</key>
-			<string></string>
 			<key>ProcessorType</key>
 			<integer>0</integer>
 			<key>ROM</key>
-			<data></data>
+			<data>TZVebYAC</data>
 			<key>SpoofVendor</key>
 			<true/>
 			<key>SystemMemoryStatus</key>
@@ -2090,9 +2076,9 @@
 			<key>SystemProductName</key>
 			<string>MacBookPro15,4</string>
 			<key>SystemSerialNumber</key>
-			<string></string>
+			<string>FVFYCZZVL40Y</string>
 			<key>SystemUUID</key>
-			<string></string>
+			<string>1050F631-0A4F-405E-B7C6-75C9B0F7A422</string>
 		</dict>
 		<key>Memory</key>
 		<dict>
@@ -2110,9 +2096,9 @@
 					<key>Manufacturer</key>
 					<string>Kingston</string>
 					<key>PartNumber</key>
-					<string></string>
+					<string>KF2666C15S4/8G</string>
 					<key>SerialNumber</key>
-					<string></string>
+					<string>A8710747</string>
 					<key>Size</key>
 					<integer>8192</integer>
 					<key>Speed</key>
@@ -2128,9 +2114,9 @@
 					<key>Manufacturer</key>
 					<string>Kingston</string>
 					<key>PartNumber</key>
-					<string></string>
+					<string>KF2666C15S4/8G</string>
 					<key>SerialNumber</key>
-					<string></string>
+					<string>B170443B</string>
 					<key>Size</key>
 					<integer>8192</integer>
 					<key>Speed</key>
