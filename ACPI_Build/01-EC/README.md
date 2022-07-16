@@ -64,9 +64,9 @@ Scope (_SB.PCI0.LPCB)
 <br>
 
 #### 注： <br>
-* 台式机禁用系统 EC0，笔记本不禁用，即不要取消禁用 EC0 的注释，但都需要创建 EC<br>
-* 是否启用 \_STA 取决于原本 EC0 下是否有 \_STA<br>
-* EC 的名称可能是 EC0，H_EC
+* 台式机`需`禁用系统 EC0，笔记本`不需`禁用 EC0，即不要取消 [SSDT-EC-USBX.dsl](https://github.com/ZuoMu-T/Hackintosh_HP-ZHAN-66-Pro-G2/blob/master/ACPI_Build/EC/SSDT-EC-USBX.dsl) 中禁用 EC0 的注释，但都需要创建 EC
+* 是否启用 \_STA 取决于原本 EC0 下是否有 \_STA
+* EC 的名称可能是 EC0，H_EC等
 * USBX 的代码是通用的
 <br>
 
