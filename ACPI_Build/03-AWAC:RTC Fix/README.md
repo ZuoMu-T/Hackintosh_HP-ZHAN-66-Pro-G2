@@ -200,7 +200,7 @@ RTC，实时时钟，即 Real-time clock，是一个独立的 BCD 定时器/计�
 	* 如果你的主板 DSDT 只有一组 RTC memory，长度（Length）为 0x08，那它就不存在此问题。**<br>
 <br>
 
-接着，需要确定你的 RTC 设备是否有 \_STA 函数。如果没有，需要在 SSDT-RTC0-RANGE-对应 Case 3.dsl 中启用。
+接着，需要确定你的 RTC 设备是否有 \_STA 函数。如果没有，需要在 [SSDT-RTC0-RANGE-对应 Case 3.dsl](https://github.com/ZuoMu-T/Hackintosh_HP-ZHAN-66-Pro-G2/blob/master/ACPI_Build/03-AWAC:RTC%20Fix/SSDT-RTC0-RANGE-%E5%AF%B9%E5%BA%94%20Case%203.dsl) 中启用。
 
 然后，搜索 `PNP0B00` 以确定 RTC 设备的路径（搜索到以下代码后记录其路径）。
 
